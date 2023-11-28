@@ -298,6 +298,8 @@ egov-idgen:
   autocreate-new-seq: "true"
 
 egov-mdms-service:
+  heap: "-Xmx512m -Xms512m"
+  memory_limits: "768Mi"
   mdms-path: "/work-dir/upyog-mdms-data/data"
   initContainers:
     gitSync:
@@ -522,6 +524,8 @@ collection-masters:
   db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db"
 
 collection-services:
+  heap: "-Xmx384m -Xms256m"
+  memory_limits: 472Mi
   receiptnumber-servicebased: "true"
   apportion-endpoint: /apportion-service/v2/bill/_apportion
   receipt-search-paginate: "true"
@@ -565,6 +569,8 @@ rainmaker-pgr:
   notification-allowed-status: "open,assigned,rejected,resolved"
 
 pgr-services:
+  heap: "-Xmx378m -Xms256m"
+  memory_limits: 472Mi
   notification-sms-enabled: "true"
   notification-email-enabled: "true"
   new-complaint-enabled: "true"
