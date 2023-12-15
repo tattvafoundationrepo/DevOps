@@ -51,6 +51,8 @@ env: |
     value:  {{ index .Values "master-data-index" | quote }}
   - name: MODULE_FIELDS_MAPPING
     value:  {{ index .Values "module-fields-mapping" | quote }}
+  - name: NATIONAL_DASHBOARD_USER
+    value: {{ index .Values "national-dashboard-user" | quote }}  
   - name: MASTER_MODULE_FIELDS_MAPPING
     value:  {{ index .Values "master-module-fields-mapping" | quote }}
   - name: MODULE_ALLOWED_GROUPBY_FIELDS_MAPPING
