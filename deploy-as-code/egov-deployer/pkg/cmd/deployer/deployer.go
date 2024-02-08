@@ -15,7 +15,7 @@ import (
 func DeployCharts(options Options) {
 
 	helmDir, _ := filepath.Abs(options.HelmDir)
-	log.Println("Helm Directory - " + helmDir)
+	log.Println("Helm Directory")
 
 	index := buildIndex(helmDir)
 	envOverrideFile := filepath.FromSlash(fmt.Sprintf(helmDir+"/environments/%s.yaml", options.Environment))
