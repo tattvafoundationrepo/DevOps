@@ -28,7 +28,6 @@ healthChecks:
 appType: "java-spring"
 tracing-enabled: true
 axis: true
-paygov: true
 payu-url: ""
 payu-url-status: ""
 ccavenue-status-access-code: ""
@@ -37,7 +36,8 @@ ccavenue-url: ""
 ccavenue-url-status: ""
 ccavenue-url-redirect: ""
 ccavenue-url-cancel: ""
-heap: "-Xmx192m -Xms192m"
+heap: "-Xmx384m -Xms256m"
+memory_limits: 512Mi
 java-args: "-Dspring.profiles.active=monitoring"
 java-debug: "true"
 
@@ -64,11 +64,6 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: billing-service
-  - name: EGOV_USERSERVICE_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: egov-user        
   - name: EGOV_COLLECTIONSERVICE_HOST
     valueFrom:
       configMapKeyRef:
@@ -180,64 +175,6 @@ env: |
     value: {{ index .Values "ccavenue-url-redirect" | quote }}
   - name: CCAVENUE_CANCEL_URL
     value: {{ index .Values "ccavenue-url-cancel" | quote }}
-  {{- end }}
-  {{- if .Values.paygov }}
-  - name: PAYGOV_ACTIVE
-    value: "true"
-  - name: PAYGOV_MESSAGETYPE
-    value: "0100"
-  - name: PAYGOV_CURRENCY
-    value: "INR"
-  - name: PAYGOV_MERCHANT_VPC_COMMAND_PAY    
-    value: "pay"
-  - name: PAYGOV_MERCHANT_VPC_COMMAND_STATUS
-    value: "queryDR"
-  - name: PAYGOV_DATEFORMAT
-    value: "dd-MM-yyyy HH:mm:SSS"
-  - name: PAYGOV_GATEWAY_URL
-    value: "https://pilot.surepay.ndml.in/SurePayPayment/sp/processRequest"
-  - name: PAYGOV_GATEWAY_STATUS_URL
-    value: "https://pilot.surepay.ndml.in/SurePayPayment/v1/queryPaymentStatus"
-  - name: PAYGOV_GATEWAY_STATUS_URL_WITHIP
-    value: "https://121.242.223.194/SurePayPayment/v1/queryPaymentStatus"
-  - name: PAYGOV_CITIZEN_REDIRECT_DOMAIN_NAME
-    value: "https://upyog.niua.org"
-  - name: PAYGOV_MERCHANT_ID
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: paygov-merchant-id
-  - name: PAYGOV_MERCHANT_SECRET_KEY
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: paygov-merchant-secret-key
-  - name: PAYGOV_MERCHANT_USER
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: paygov-merchant-user
-  - name: PAYGOV_MERCHANT_PWD
-    valueFrom:
-      secretKeyRef:
-        name: egov-pg-service
-        key: paygov-merchant-pwd
-  {{- end }}
-  {{- if .Values.nttdata }}
-  - name: NTTDATA_ACTIVE
-    value: "true"
-  - name: NTTDATA_MERCHANT_ID
-    value: "317156"
-  - name: NTTDATA_REDIRECT_URL
-    value: "https://upyog-test.niua.org/pg-service/transaction/v1/_redirect"
-  - name: NTTDATA_GATEWAY_URL_STATUS
-    value: "https://paynetzuat.atomtech.in/ots/payment/status?"
-  - name: NTTDATA_GATEWAY_URL_ATOM
-    value: "https://paynetzuat.atomtech.in/ots/aipay/auth?"
-  - name: NTTDATA_ORIGINAL_RETURN_URL_KEY
-    value: "originalreturnurl"
-  - name: NTTDATA_MERCHANT_CHECKOUT_HOST
-    value: "https://pgtest.atomtech.in/staticdata/ots/js/atomcheckout.js"
   {{- end }}
   - name: JAVA_OPTS
     value: {{ index .Values "heap" | quote }}

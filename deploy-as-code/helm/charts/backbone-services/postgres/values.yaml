@@ -12,7 +12,7 @@ httpPort: 5432
 resources: |
   requests:
     cpu: 100m
-    memory: 356Mi
+    memory: 256Mi
 
 tracing-enabled: false
 
@@ -23,29 +23,21 @@ env: |
         name: db
         key: password
   - name:  POSTGRES_USER
-    valueFrom: 
-      secretKeyRef: 
+    valueFrom:
+      secretKeyRef:
         name: db
         key: username
   - name: POSTGRES_DB
     value: {{ default "" .Values.postgresDatabase | quote }}
-
-postgresDatabase: upyog_sandbox_db
-
-persistence:
-  enabled: true
-  aws:
-    volumeId: "vol-00c9fa54fff988b0c"
-  storageClassName: gp2
-  accessMode: ReadWriteOnce
-  dataDirSize: 300Gi 
-  volumeMode: Filesystem
-
 extraVolumeMounts: |
-  - mountPath: /var/lib/postgresql/data
-    name: postgres-data
-    subPath: html
+  - name: postgres-volume
+    mountPath: /var/lib/postgresql/data
 extraVolumes: |
-  - name: postgres-data
+  - name: postgres-volume
+  {{- if eq .Values.global.setup "quickstart" }} 
     persistentVolumeClaim:
-      claimName: postgres-data
+      claimName: pvc-postgres
+  {{- end}}    
+
+
+postgresDatabase: egov_ms      

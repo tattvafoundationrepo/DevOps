@@ -7,9 +7,9 @@ namespace: playground
 ingress:
   enabled: true
   context: "pgadmin"
-  additionalAnnotations: |
-  nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
-  nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
+  # additionalAnnotations: |
+  #   nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
+  #   nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
 
 # Init Containers Configs
 initContainers: {}
@@ -21,16 +21,16 @@ image:
 replicas: "1"
 httpPort: 8080
 serverBasePath: "/pgadmin"
-dbUrl: "upyog-prod-rds.cmqlydmcmpru.ap-south-1.rds.amazonaws.com"
-environment: "prod"
-maintenance-db-name: "nugp_db"           
+dbUrl: "egov-dev-db.ctm6jbmr5mnj.ap-south-1.rds.amazonaws.com"
+environment: "DEV"
+maintenance-db-name: "postgres"           
 
 # Additional Container Envs
 env: |  
   - name: SERVER_HOST
     value: {{ .Values.dbUrl | quote }}     
   - name: SERVER_PORT
-    value: "5962" 
+    value: "5432" 
   - name: SERVER_MODE
     value: "False"         
   - name: SERVER_NAME
