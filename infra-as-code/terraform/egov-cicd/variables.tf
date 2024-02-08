@@ -3,7 +3,7 @@
 #
 
 variable "cluster_name" {
-  default = "egov-cicd"
+  default = "tattva-jenkins"
 }
 
 variable "vpc_cidr_block" {
@@ -19,7 +19,7 @@ variable "availability_zones" {
 }
 
 variable "kubernetes_version" {
-  default = "1.20"
+  default = "1.23"
 }
 
 variable "instance_type" {
@@ -40,6 +40,6 @@ variable "spot_max_price" {
 }
 
 variable "ssh_key_name" {
-  default = "egov-cicd"
+  default = "tattva-cicd"
 }
 
