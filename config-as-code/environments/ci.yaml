@@ -1,7 +1,7 @@
 global:
   domain: cicd.nagalandhealthproject.org ##
   setup: fullsetup
-  
+  namespace: jenkins
 cluster-configs:
   namespaces:
     create: true
