@@ -9,7 +9,7 @@ labels:
 
 # Container Configs
 image:
-  repository: "egov-finance"
+  repository: "tattvafoundation"
   pullPolicy: IfNotPresent
   tag: latest
 replicas: "1"
