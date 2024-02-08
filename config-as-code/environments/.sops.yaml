@@ -3,10 +3,10 @@ creation_rules:
         # upon creation of a file that matches the pattern *dev.yaml,
         # KMS set A is used
         # eGOV Internal ------------------------------------------------------------------------------------------------------------- #
-        - path_regex: environments/egov-demo\-secrets\.yaml$
+        - path_regex: egov-demo\-secrets\.yaml$
           kms: 'arn:aws:kms:ap-south-1:713626956440:key/ab6e43d7-dabb-4aac-b602-89a94ca24795'
-          pgp: '58BE55DFE047D960AFF29E8891E02D93FD9F' 
-          
-        - path_regex: environments/ci\-secrets\.yaml$
+          pgp: '58BE55DFE047D960AFF29E8891E02D93FD9F'
+
+        - path_regex: ci\-secrets\.yaml$
           kms: 'arn:aws:kms:ap-south-1:713626956440:key/ab6e43d7-dabb-4aac-b602-89a94ca24795'
-          pgp: '58BE55DFE047D960AFF29E8891E02D93FD9F'          
+          pgp: '58BE55DFE047D960AFF29E8891E02D93FD9F'

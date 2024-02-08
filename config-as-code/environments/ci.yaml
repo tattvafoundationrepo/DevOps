@@ -1,5 +1,5 @@
 global:
-  domain: cicd.nagalandhealthproject.org ## Add your Domain Name Eg: site.mydomain.com
+  domain: cicd.nagalandhealthproject.org ##
   setup: fullsetup
   
 cluster-configs:
