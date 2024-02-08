@@ -416,7 +416,7 @@ master:
                   scm:
                     git:
                       credentialsId: "git_read"
-                      remote: "git@github.com:egovernments/CIOps.git"
+                      remote: "git@github.com:tattvafoundationrepo/CIOps.git"
                       traits:
                       - "gitBranchDiscovery"
       system-message: | 
@@ -565,7 +565,7 @@ master:
                 disabled(false)
               }
               {{- else }}
-              deployer(repo:'git@github.com:egovernments/DIGIT-DevOps.git', branch: 'master', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
+              deployer(repo:'git@github.com:tattvafoundationrepo/DevOps.git', branch: 'master', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
