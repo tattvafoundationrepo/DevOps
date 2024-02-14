@@ -32,7 +32,7 @@ jenkins:
     repos: >-
       'git@github.com:tattvafoundationrepo/ukpfms.git', 'git@github.com:flatlineratheist/business.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
-    - name: uat    # deployment job name
+    - name: tattva    # deployment job name
       acl: [tattvafoundationrepo*tattva] # GitHub team name, Members of the team get access to deployment job  
        
   master:
