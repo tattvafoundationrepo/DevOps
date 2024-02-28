@@ -30,9 +30,9 @@ jenkins:
 
   jobBuilder:    # Add jobBuilder repo's, add repo's ssh link
     repos: >-
-      'git@github.com:tattvafoundationrepo/ukpfms.git', 'git@github.com:flatlineratheist/business.git'
+      'git@github.com:tattvafoundationrepo/ukpfms.git', 'git@github.com:tattvafoundationrepo/UPYOG.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
-    - name: tattva    # deployment job name
+    - name: uat    # deployment job name
       acl: [tattvafoundationrepo*tattva] # GitHub team name, Members of the team get access to deployment job  
        
   master:
