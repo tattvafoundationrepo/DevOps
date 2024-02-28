@@ -170,7 +170,8 @@ elastic_search_config: |
   #search.clusterName=punjab-dev-es-cluster
 
 tenants: |
-  tenant.sunam-dev.egovernments.org=sunam
+  tenant.citya.uat.dev-tattvafoundation.org=citya
+  #tenant.sunam-dev.egovernments.org=sunam
   #tenant.longowal-dev.egovernments.org=longowal
   #tenant.kotfatta-dev.egovernments.org=kotfatta
   #tenant.bhikhi-dev.egovernments.org=bhikhi
