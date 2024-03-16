@@ -170,7 +170,8 @@ elastic_search_config: |
   #search.clusterName=punjab-dev-es-cluster
 
 tenants: |
-  tenant.sunam-dev.egovernments.org=sunam
+  tenant.citya.uat.dev-tattvafoundation.org=citya
+  #tenant.sunam-dev.egovernments.org=sunam
   #tenant.longowal-dev.egovernments.org=longowal
   #tenant.kotfatta-dev.egovernments.org=kotfatta
   #tenant.bhikhi-dev.egovernments.org=bhikhi
@@ -203,9 +204,9 @@ tenants: |
   #tenant.mansa-dev.egovernments.org=mansa
   #tenant.rajasansi-dev.egovernments.org=rajasansi
   #tenant.banga-dev.egovernments.org=banga
-  tenant.jalandhar-dev.egovernments.org=jalandhar
-  tenant.amritsar-dev.egovernments.org=amritsar
-  tenant.phagwara-dev.egovernments.org=phagwara
+  #tenant.jalandhar-dev.egovernments.org=jalandhar
+  #tenant.amritsar-dev.egovernments.org=amritsar
+  #tenant.phagwara-dev.egovernments.org=phagwara
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 

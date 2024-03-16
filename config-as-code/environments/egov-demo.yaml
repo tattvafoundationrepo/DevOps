@@ -392,7 +392,7 @@ nginx-ingress:
   ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
 
 cert-manager:
-  email: "devops@egovernments.org"     ### Add email-id which used by cert-manager for certificates validation.
+  email: "faizan@tattvafoundation.org"     ### Add email-id which used by cert-manager for certificates validation.
   
   
 zuul:
@@ -473,7 +473,7 @@ financeTenants: |
   tenant.citya.uat.dev-tattvafoundation.org=citya
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
-  
+
 egov-finance:
   dev_mode: true
   filestore_beanname: microDiskFileStoreService
