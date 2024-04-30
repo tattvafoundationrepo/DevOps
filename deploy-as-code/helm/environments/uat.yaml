@@ -471,6 +471,9 @@ egov-hrms:
 # eGov-finance Tenants
 financeTenants: |
   tenant.citya.uat.dev-tattvafoundation.org=citya
+  tenant.doiwala.uat.dev-tattvafoundation.org=doiwala
+  tenant.almora.uat.dev-tattvafoundation.org=almor
+  tenant.nainital.uat.dev-tattvafoundation.org=nainital
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
