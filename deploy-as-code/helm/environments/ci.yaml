@@ -32,11 +32,8 @@ jenkins:
     repos: >-
       'git@github.com:tattvafoundationrepo/UPYOG.git','git@github.com:tattvafoundationrepo/egov-coexistence.git'
   deploymentJobs:  # Setup deploymentJobs ACL 
-    - name: uat    # deployment job name
-      acl: [tattvafoundationrepo*tattva] # GitHub team name, Members of the team get access to deployment job  
-  deploymentJobs:
     - name: ukpfms    # deployment job name
-      acl: [tattvafoundationrepo*tattva] # GitHub team name, Members of the team get access to deployment job
+      acl: [tattvafoundationrepo*tattva] # GitHub team name, Members of the team get access to deployment job  
   master:
     ingress:
       enabled: true
