@@ -139,7 +139,7 @@ mail_config: |
   mail.port=465
   mail.host=smtp.gmail.com
   mail.protocol=smtps
-  mail.sender.username=support@tattvafoundation.org
+  mail.sender.username=punjabulb@gmail.com
   mail.sender.password=${mail-sender-password}
   mail.smtps.auth=true
   mail.smtps.starttls.enable=true
@@ -170,8 +170,43 @@ elastic_search_config: |
   #search.clusterName=punjab-dev-es-cluster
 
 tenants: |
-  tenant.dehradun.uk.nagalandhealthproject.org=dehradun
-  tenant.doiwala.uk.nagalandhealthproject.org=doiwala
+  tenant.citya.uat.dev-tattvafoundation.org=citya
+  #tenant.sunam-dev.egovernments.org=sunam
+  #tenant.longowal-dev.egovernments.org=longowal
+  #tenant.kotfatta-dev.egovernments.org=kotfatta
+  #tenant.bhikhi-dev.egovernments.org=bhikhi
+  #tenant.budhlada-dev.egovernments.org=budhlada
+  #tenant.morinda-dev.egovernments.org=morinda
+  #tenant.boha-dev.egovernments.org=boha
+  #tenant.khemkaran-dev.egovernments.org=khemkaran
+  #tenant.mallanwala-dev.egovernments.org=mallanwala
+  #tenant.ajnala-dev.egovernments.org=ajnala
+  #tenant.badhnikalan-dev.egovernments.org=badhnikalan
+  #tenant.majitha-dev.egovernments.org=majitha
+  #tenant.ramdass-dev.egovernments.org=ramdass
+  #tenant.jandialaguru-dev.egovernments.org=jandialaguru
+  #tenant.bareta-dev.egovernments.org=bareta
+  #tenant.phillaur-dev.egovernments.org=phillaur
+  #tenant.samana-dev.egovernments.org=samana
+  #tenant.sangatmandi-dev.egovernments.org=sangatmandi
+  #tenant.talwandisabo-dev.egovernments.org=talwandisabo
+  #tenant.balachaur-dev.egovernments.org=balachaur
+  #tenant.bassipathana-dev.egovernments.org=bassipathana
+  #tenant.batala-dev.egovernments.org=batala
+  #tenant.srihargobindpur-dev.egovernments.org=srihargobindpur
+  #tenant.bhadaur-dev.egovernments.org=bhadaur
+  #tenant.dirba-dev.egovernments.org=dirba
+  #tenant.bhuchomandi-dev.egovernments.org=bhuchomandi
+  #tenant.sanaur-dev.egovernments.org=sanaur
+  #tenant.sujanpur-dev.egovernments.org=sujanpur
+  #tenant.jaitu-dev.egovernments.org=jaitu
+  #tenant.goniana-dev.egovernments.org=goniana
+  #tenant.mansa-dev.egovernments.org=mansa
+  #tenant.rajasansi-dev.egovernments.org=rajasansi
+  #tenant.banga-dev.egovernments.org=banga
+  #tenant.jalandhar-dev.egovernments.org=jalandhar
+  #tenant.amritsar-dev.egovernments.org=amritsar
+  #tenant.phagwara-dev.egovernments.org=phagwara
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
@@ -190,8 +225,8 @@ payment-gatway-credential: |
 
 microservice: |
   egov.collection.version={{ index .Values "collection-version" }}
-  egov.default.services.endpoint=https://msewa.nagalandhealthproject.org/
-  egov.hrms.service.endpoint==http://egov-hrms.egov:8080/
+  egov.default.services.endpoint=https://egov-micro-dev.egovernments.org/
+  egov.hrms.service.endpoint=http://egov-hrms.egov:8080/
   egov.accesscontrol.service.endpoint=http://egov-accesscontrol.egov:8080/
   egov.hr.masters.service.endpoint=http://hr-masters.egov:8080/
   egov.user.service.endpoint=http://egov-user.egov:8080/
