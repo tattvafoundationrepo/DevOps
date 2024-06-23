@@ -191,7 +191,7 @@ payment-gatway-credential: |
 microservice: |
   egov.collection.version={{ index .Values "collection-version" }}
   egov.default.services.endpoint=https://msewa.nagalandhealthproject.org/
-  egov.hrms.service.endpoint==http://egov-hrms.egov:8080/
+  egov.hrms.service.endpoint=http://egov-hrms.egov:8080/
   egov.accesscontrol.service.endpoint=http://egov-accesscontrol.egov:8080/
   egov.hr.masters.service.endpoint=http://hr-masters.egov:8080/
   egov.user.service.endpoint=http://egov-user.egov:8080/
